@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<h1 class="mb-4 text-center">Employee Login</h1>
+<div class="container mb-3 px-4">
+<form method="POST" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3 ">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" placeholder="Enter your name">
+      {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+    </div>
+    <div class="mb-3 ">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email address">
+      {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+    </div>
+    <div class="mb-3 ">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Enter your Password">
+    </div>
+    {% comment %} <div class="mb-3 ">
+        <label for="exampleFormControlTextarea1" name="desc" class="form-label">Reason for Contacting</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div> {% endcomment %}
+      <button type="submit" class="btn btn-dark">Login</button>
+  </form>
+</div>
+{% endblock body %}
